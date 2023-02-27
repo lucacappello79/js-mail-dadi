@@ -4,7 +4,7 @@
 // ?SE presente, stampare un messaggio adeguato
 
 
-const mailAuthorized = ["luca@gmail.com", "paolo@gmail.com", "pietro@gmail.com", "marco@gmail.com"]
+const mailsAuthorized = ["luca@gmail.com", "paolo@gmail.com", "pietro@gmail.com", "marco@gmail.com"]
 
 let inputMail = document.getElementById("userMail");
 let logInButton = document.getElementById("logIn");
@@ -15,17 +15,22 @@ logInButton.addEventListener("click", function() {
 
    // if (mailAuthorized.includes(inputMail.value))
 
-   for (let i = 0; i < mailAuthorized.length; i++) {
+   for (let i = 0; i < mailsAuthorized.length; i++) {
 
-    if (inputMail.value == mailAuthorized[i])
+    if (inputMail.value === mailsAuthorized[i]) {
 
-    welcomeEl.innerText = "Benvenuto caro utente pagante"
+    welcomeEl.innerText = "Benvenuto caro utente pagante";
+    welcomeEl.style.display = "block";
 
-    console.log("accesso autorizzato")
+    console.log("accesso autorizzato");
 
-   }
-   
+   } 
+}
+
+alert("Accesso negato");
+
 })
+
 
 clearButton.addEventListener("click", function() {
 
@@ -34,4 +39,26 @@ clearButton.addEventListener("click", function() {
 })
 
 
+// dadi
 
+// Genero un numero random da 1 a 6 per il giocatore e uno per il computer
+let numberPlayer = Math.floor(Math.random() * 6) + 1;
+let numberComputer = Math.floor(Math.random() * 6) + 1;
+
+console.log("Player: " + numberPlayer);
+console.log("Computer: " + numberComputer);
+
+// Confronto dei punteggi
+if (numberPlayer > numberComputer) {
+
+  console.log("player 1 won");
+
+} else if (numberComputer > numberPlayer) {
+
+  console.log("computer won");
+
+} else {
+
+  console.log("even");
+
+}
