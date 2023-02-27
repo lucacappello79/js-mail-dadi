@@ -8,11 +8,30 @@ const mailAuthorized = ["luca@gmail.com", "paolo@gmail.com", "pietro@gmail.com",
 
 let inputMail = document.getElementById("userMail");
 let logInButton = document.getElementById("logIn");
+let welcomeEl = document.getElementById("welcome")
+let clearButton = document.getElementById("clear")
 
 logInButton.addEventListener("click", function() {
 
-    if (mailAuthorized.includes(inputMail.value))
+   // if (mailAuthorized.includes(inputMail.value))
 
-    console.log("ciao")
+   for (let i = 0; i < mailAuthorized.length; i++) {
 
+    if (inputMail.value == mailAuthorized[i])
+
+    welcomeEl.innerText = "Benvenuto caro utente pagante"
+
+    console.log("accesso autorizzato")
+
+   }
+   
 })
+
+clearButton.addEventListener("click", function() {
+
+    inputMail.value = ""
+    welcomeEl.style.display = "none"
+})
+
+
+
