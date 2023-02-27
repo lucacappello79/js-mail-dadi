@@ -10,6 +10,9 @@ let inputMail = document.getElementById("userMail");
 let logInButton = document.getElementById("logIn");
 
 logInButton.addEventListener("click", function() {
-    if (mailAuthorized.includes(logInButton.value))
-    console.log
-}
+
+    if (mailAuthorized.includes(inputMail.value))
+
+    console.log("ciao")
+
+})
