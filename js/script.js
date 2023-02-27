@@ -8,14 +8,43 @@ const mailsAuthorized = ["luca@gmail.com", "paolo@gmail.com", "pietro@gmail.com"
 
 let inputMail = document.getElementById("userMail");
 let logInButton = document.getElementById("logIn");
-let welcomeEl = document.getElementById("welcome")
-let clearButton = document.getElementById("clear")
+let welcomeEl = document.getElementById("welcome");
+let clearButton = document.getElementById("clear");
+let verified = false;
 
 logInButton.addEventListener("click", function() {
 
+    for (let i=0; i < mailsAuthorized.length; i++) {
+
+        if (inputMail.value === mailsAuthorized[i]) {
+
+            verified = true;
+            break;
+     
+        }
+    }
+})
+
+console.log(verified)
+
+if (verified = true) { 
+
+    welcomeEl.innerText = "Benvenuto caro utente pagante";
+
+    welcomeEl.style.display = "block";
+
+} else {
+
+    alert("accesso negato"); 
+}
+
+
+
+
+
    // if (mailAuthorized.includes(inputMail.value))
 
-   for (let i = 0; i < mailsAuthorized.length; i++) {
+ /*  for (let i = 0; i < mailsAuthorized.length; i++) {
 
     if (inputMail.value === mailsAuthorized[i]) {
 
@@ -31,7 +60,7 @@ logInButton.addEventListener("click", function() {
 alert("Accesso negato");
 
 })
-
+*/
 
 clearButton.addEventListener("click", function() {
 
