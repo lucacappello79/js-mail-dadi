@@ -23,6 +23,7 @@ logInButton.addEventListener("click", function() {
     welcomeEl.style.display = "block";
 
     console.log("accesso autorizzato");
+    return;
 
    } 
 }
