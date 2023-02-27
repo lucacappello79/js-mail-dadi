@@ -10,33 +10,35 @@ let inputMail = document.getElementById("userMail");
 let logInButton = document.getElementById("logIn");
 let welcomeEl = document.getElementById("welcome");
 let clearButton = document.getElementById("clear");
-let verified = false;
+
 
 logInButton.addEventListener("click", function() {
 
+    let verified = false;
+
     for (let i=0; i < mailsAuthorized.length; i++) {
 
-        if (inputMail.value === mailsAuthorized[i]) {
+        if (inputMail.value == mailsAuthorized[i]) {
 
             verified = true;
-            break;
-     
+
         }
+
     }
+
+    if (verified) { 
+
+        welcomeEl.innerText = "Benvenuto caro utente pagante";
+        welcomeEl.style.display = "block";
+    
+    } else {
+    
+        alert("accesso negato"); 
+    }
+
 })
 
-console.log(verified)
 
-if (verified = true) { 
-
-    welcomeEl.innerText = "Benvenuto caro utente pagante";
-
-    welcomeEl.style.display = "block";
-
-} else {
-
-    alert("accesso negato"); 
-}
 
 
 
